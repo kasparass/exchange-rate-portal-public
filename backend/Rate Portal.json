@@ -1,0 +1,135 @@
+{
+  "name": "Rate Portal",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Get Current FX Rates",
+      "filename": "Get Current FX Rates.bru",
+      "seq": 1,
+      "settings": {
+        "encodeUrl": false
+      },
+      "tags": [],
+      "request": {
+        "url": "https://www.lb.lt/webservices/FxRates/FxRates.asmx/getCurrentFxRates",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "formUrlEncoded",
+          "formUrlEncoded": [
+            {
+              "name": "tp",
+              "value": "EU",
+              "enabled": true
+            }
+          ],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "FX rates for currency between dates",
+      "filename": "FX rates for currency between dates.bru",
+      "seq": 2,
+      "settings": {
+        "encodeUrl": false
+      },
+      "tags": [],
+      "request": {
+        "url": "https://www.lb.lt/webservices/FxRates/FxRates.asmx/getFxRatesForCurrency",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "formUrlEncoded",
+          "formUrlEncoded": [
+            {
+              "name": "tp",
+              "value": "EU",
+              "enabled": true
+            },
+            {
+              "name": "ccy",
+              "value": "USD",
+              "enabled": true
+            },
+            {
+              "name": "dtFrom",
+              "value": "2025-07-01",
+              "enabled": true
+            },
+            {
+              "name": "dtTo",
+              "value": "2025-10-22",
+              "enabled": true
+            }
+          ],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Get currency list",
+      "filename": "Get currency list.bru",
+      "seq": 3,
+      "settings": {
+        "encodeUrl": true
+      },
+      "tags": [],
+      "request": {
+        "url": "https://www.lb.lt/webservices/FxRates/FxRates.asmx/getCurrencyList",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Rate Portal",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0,
+    "filesCount": 0
+  }
+}
